@@ -26,9 +26,21 @@
   </style>
 </head>
 <body>
-  <video autoplay muted playsinline class="h-[90%]">
+  <video id="mainVideo" autoplay muted playsinline class="h-[90%]">
     <source src="./b1.mp4" type="video/mp4">
   </video>
-    <button onclick="window.location.href='http://localhost:5173/f2eon9/projectscene/6662a98d63ea238bc171bfeb/666c1b602bc6bae7a2d7051d'">Explore Site</button>
+  <button id="exploreBtn">Explore Site</button>
+  <iframe id="siteFrame" src="" style="display:none; width:100vw; height:90vh; border:none;"></iframe>
+  <script>
+    const btn = document.getElementById('exploreBtn');
+    const iframe = document.getElementById('siteFrame');
+    const video = document.getElementById('mainVideo');
+    btn.onclick = function() {
+      iframe.src = 'http://localhost:5173/f2eon9/projectscene/6662a98d63ea238bc171bfeb/666c1b602bc6bae7a2d7051d';
+      iframe.style.display = 'block';
+      video.style.display = 'none';
+      btn.style.display = 'none';
+    };
+  </script>
 </body>
 </html>
